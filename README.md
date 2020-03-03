@@ -6,6 +6,13 @@ Simple example script that queries all regions and outputs table.
 Steps to remedy: Steps to Remedy Out of Data Cert: https://aws.amazon.com/blogs/database/amazon-rds-customers-update-your-ssl-tls-certificates-by-february-5-2020/
 
 ```
+# Download Bash Script
+
+```
+wget https://raw.githubusercontent.com/hemande/RDS-Cert-Check/master/rds_cert.sh
+chmod +x rds_cert.sh
+
+```
 ./rds_cert.sh -h
 Checks for out of date RDS Cert
 
@@ -34,4 +41,5 @@ f     Show only affected RDS Instance
 - Does not paginate list, max is 100 per region
 - Does not accept custom profile as input
 - Does not apply changes
-- Requires ec2:DescribeRegions and rds:DescribeDBInstances permissions
+- Requires aws cli installed
+- IAM Permissions ec2:DescribeRegions and rds:DescribeDBInstances permissions
